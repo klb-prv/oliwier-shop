@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+
+@import "tailwindcss/preflight";
+
+@tailwind utilities;
+
+/* DaisyUI default config (optional override) */
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake, dracula;
+}
+
+
+
+/* Fluent-style mesh background */
+.animated-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: radial-gradient(circle at 20% 30%, rgba(94,143,255,0.2), transparent),
+              radial-gradient(circle at 70% 60%, rgba(255,94,159,0.2), transparent);
+  background-size: 200% 200%;
+  animation: meshShift 20s ease infinite;
+}
+@keyframes meshShift {
+  0%   { background-position: 0% 0%,   100% 100%; }
+  50%  { background-position: 100% 100%, 0%   0%;   }
+  100% { background-position: 0% 0%,   100% 100%; }
+}
